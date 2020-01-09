@@ -8,13 +8,14 @@ public class NewBehaviourScript : MonoBehaviour
 
     void Start()
     {
-        InvokeRepeating("players", 2, 1);
+        Invoke("players", 2);
     }
 
     void players()
     {
-        float x = Random.Range(-2.0f, 2.0f);
-        float z = Random.Range(-2.0f, 2.0f);
+        float x = Random.Range(-6.0f, 6.0f);
+        float z = Random.Range(-6.0f, 6.0f);
         Instantiate(player, new Vector3(x, 2, z), Quaternion.identity);
+        Destroy(player, 2f);
     }
 }
